@@ -14,7 +14,7 @@ public class 폰켓몬 {
     public int solution(int[] nums) {
         int n = nums.length / 2;
 
-        List<Integer> pokemonList = new ArrayList();
+        List<Integer> pokemonList = new ArrayList<>();
         for (int num : nums) {
             if (pokemonList.contains(num)) {
                 continue;
