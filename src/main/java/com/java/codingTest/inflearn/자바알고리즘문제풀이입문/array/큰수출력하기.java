@@ -29,13 +29,11 @@ public class 큰수출력하기 {
          *
          * 멀티 스레드 환경에서 자주 변경되는 String을 다루어야 하는 경우에는, StringBuffer를 사용하기를 권장한다.
          */
-//        StringBuilder answer = new StringBuilder();
-        String answer = String.valueOf(array[0]);
+        StringBuilder answer = new StringBuilder();
 
-//        answer.append(array[0]); // 첫 번째 수는 무조건 출력하게 만듦
+        answer.append(array[0]); // 첫 번째 수는 무조건 출력하게 만듦
         for (int i = 1; i < n; i++) {
-            if(array[i] > array[i-1]) answer = " " + array[i];
-//            if(array[i] > array[i-1]) answer.append(" ").append(array[i]); // answer += " {array[i]}"
+            if(array[i] > array[i-1]) answer.append(" ").append(array[i]); // answer += " {array[i]}"
         }
 
         System.out.println(answer);
