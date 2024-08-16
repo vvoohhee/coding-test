@@ -30,12 +30,24 @@ public class 보이는학생 {
     }
 
     private static int visibleCount(int[] heights) {
+        /* 이전 풀이
         int visibleCount = 1;
         if (heights[0] >= heights[1]) return visibleCount;
 
         for (int i = 1; i < heights.length; i++) {
             if (heights[i] < heights[i + 1]) visibleCount++;
             else return visibleCount;
+        }
+        */
+
+        // 이후 풀이
+        int visibleCount = 1;
+        int max = heights[0];
+        for(int i = 1; i < heights.length; i++) {
+            if(heights[i] > max) {
+                visibleCount++;
+                max = heights[i];
+            }
         }
 
         return visibleCount;
