@@ -17,7 +17,7 @@ package com.java.codingTest.programmers.level1;
  * [".#...", "..#..", "...#."]	[0, 1, 3, 4]
  */
 public class 바탕화면정리 {
-    public int[] solution(String[] wallpaper) {
+    public int[] solution1(String[] wallpaper) {
         // (lux, luy) = 가장 위/왼쪽에 있는 좌표
         // (rdx, rdy) = 가장 아래/오른쪽에 있는 좌표
         // String배열의 index  = lux/rdx를 결정
@@ -31,6 +31,28 @@ public class 바탕화면정리 {
                     if(luy > j ) luy = j;
                     if(rdx < i) rdx = i;
                     if(rdy < j) rdy = j;
+                }
+            }
+        }
+
+        int[] answer = {lux, luy, rdx+1, rdy+1};
+        return answer;
+    }
+
+    public int[] solution2(String[] wallpaper) {
+        // (lux, luy) = 가장 위/왼쪽에 있는 좌표
+        // (rdx, rdy) = 가장 아래/오른쪽에 있는 좌표
+        // String배열의 index  = lux/rdx를 결정
+        // String배열의 #value = luy, rdy를 결정
+
+        int lux = 50, luy = 50, rdx = 0, rdy = 0;
+        for(int i = 0; i < wallpaper.length; i++){
+            for(int j = 0; j < wallpaper[i].length(); j++){
+                if(wallpaper[i].charAt(j) == '#'){
+                    lux = Math.min(lux, i);
+                    luy = Math.min(luy, j);
+                    rdx = Math.max(rdx, i);
+                    rdy = Math.max(rdy, j);
                 }
             }
         }
