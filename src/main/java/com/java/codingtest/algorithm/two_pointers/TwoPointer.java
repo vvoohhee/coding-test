@@ -1,4 +1,4 @@
-package com.java.codingtest.inflearn.코딩테스트올인원;
+package com.java.codingtest.algorithm.two_pointers;
 
 public class TwoPointer {
     /**
