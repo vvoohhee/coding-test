@@ -45,6 +45,10 @@ public class Q70_ClimbingStairs {
     private static int[] dp;
 
     public int climbStairs(int n) {
+        // n이 base case일 때에는 그냥 리턴
+        if(n == 1) return 1;
+        if(n == 2) return 2;
+
         // dp 배열 선언 및 초기화, base case 지정
         dp = new int[n + 1];
         dp[1] = 1;
